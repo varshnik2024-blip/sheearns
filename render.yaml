@@ -1,0 +1,19 @@
+# Render reads this file automatically when you connect the repository,
+# so you do not have to fill the settings in by hand.
+services:
+  - type: web
+    name: sheearns
+    runtime: node
+    plan: free
+    buildCommand: npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      # Render generates a long random value for this. Never type your own.
+      - key: JWT_SECRET
+        generateValue: true
+      # Add your own key in the Render dashboard after the first deploy.
+      # Leave it unset and the AI chat falls back to its built-in answers.
+      - key: GEMINI_API_KEY
+        sync: false
