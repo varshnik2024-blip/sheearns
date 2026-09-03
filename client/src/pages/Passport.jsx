@@ -133,7 +133,7 @@ export default function Passport() {
             <Fact label={t("passportMonthlySpare")} value={rupees(base.surplus)} />
             <Fact
               label={t("passportRunway")}
-              value={base.runwayMonths === null ? "—" : `${base.runwayMonths} ${t("simMonths")}`}
+              value={base.runwayMonths === null ? "—" : t("nMonths", [base.runwayMonths])}
             />
           </div>
         </section>

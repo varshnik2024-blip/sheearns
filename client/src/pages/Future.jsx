@@ -164,11 +164,11 @@ function Simulator({ base }) {
               <div className="row" style={{ gap: 10, alignItems: "baseline" }}>
                 {impact.monthsBefore && impact.monthsAfter && impact.monthsAfter < impact.monthsBefore && (
                   <s style={{ color: "var(--muted)", fontSize: "0.95rem" }}>
-                    {impact.monthsBefore} {t("simMonths")}
+                    {t("nMonths", [impact.monthsBefore])}
                   </s>
                 )}
                 <span className="sim-big">
-                  {impact.monthsAfter ? `${impact.monthsAfter} ${t("simMonths")}` : "—"}
+                  {impact.monthsAfter ? t("nMonths", [impact.monthsAfter]) : "—"}
                 </span>
               </div>
               {impact.monthsBefore && impact.monthsAfter && impact.monthsAfter < impact.monthsBefore && (
@@ -186,7 +186,7 @@ function Simulator({ base }) {
             <MiniStat label={t("sim12Savings")} value={<Amount value={result.savedIn12Months} />} />
             <MiniStat
               label={t("simRunway")}
-              value={result.runway.after === null ? "—" : `${result.runway.after} ${t("simMonths")}`}
+              value={result.runway.after === null ? "—" : t("nMonths", [result.runway.after])}
               delta={
                 result.runway.before !== null && result.runway.after !== null
                   ? +(result.runway.after - result.runway.before).toFixed(1)
@@ -341,7 +341,7 @@ function Afford({ base }) {
           </div>
           <div className="row" style={{ justifyContent: "space-between" }}>
             <span>{t("affordRunway")}</span>
-            <b>{base.runwayMonths === null ? "—" : `${base.runwayMonths} ${t("simMonths")}`}</b>
+            <b>{base.runwayMonths === null ? "—" : t("nMonths", [base.runwayMonths])}</b>
           </div>
         </div>
       </div>
@@ -377,7 +377,7 @@ function Afford({ base }) {
               <MiniStat label={t("affordLeftAfter")} value={<Amount value={checked.leftAfter} />} />
               <MiniStat
                 label={t("affordRunwayAfter")}
-                value={checked.runwayAfter === null ? "—" : `${checked.runwayAfter} ${t("simMonths")}`}
+                value={checked.runwayAfter === null ? "—" : t("nMonths", [checked.runwayAfter])}
               />
             </div>
 

@@ -465,7 +465,14 @@ const strings = {
     passportSchemes: "Schemes she appears eligible for",
     passportNotUsed: "What was deliberately not used",
     passportLimitTitle: "What this is, and is not",
-    passportLimit: "This is a readiness summary prepared from records the applicant entered herself. It is not a credit bureau report and not a lending decision. The weights come from published research and lending practice, not from repayment outcomes. Any lender should carry out its own checks."
+    passportLimit: "This is a readiness summary prepared from records the applicant entered herself. It is not a credit bureau report and not a lending decision. The weights come from published research and lending practice, not from repayment outcomes. Any lender should carry out its own checks.",
+
+    // singular forms, picked automatically when the count is 1
+    simEarlierOne: "{0} month earlier",
+    nMonths: "{0} months",
+    nMonthsOne: "{0} month",
+    goalStepNoDeadlineOne: "At the rate you are saving now, this will take about {0} month.",
+    affordPlanTextOne: "Save {0} for one month and you can buy it without touching your emergency money."
   },
 
   hi: {
@@ -892,7 +899,14 @@ const strings = {
     passportSchemes: "जिन योजनाओं के लिए वे योग्य लगती हैं",
     passportNotUsed: "जो जानबूझकर नहीं देखा गया",
     passportLimitTitle: "यह क्या है, और क्या नहीं",
-    passportLimit: "यह आवेदक द्वारा स्वयं दर्ज रिकॉर्ड से बना तैयारी का सारांश है। यह क्रेडिट ब्यूरो रिपोर्ट नहीं है और न ही उधार देने का फ़ैसला। वज़न प्रकाशित शोध और बैंकिंग व्यवहार से लिए गए हैं, भुगतान के नतीजों से नहीं। कोई भी ऋणदाता अपनी जाँच स्वयं करे।"
+    passportLimit: "यह आवेदक द्वारा स्वयं दर्ज रिकॉर्ड से बना तैयारी का सारांश है। यह क्रेडिट ब्यूरो रिपोर्ट नहीं है और न ही उधार देने का फ़ैसला। वज़न प्रकाशित शोध और बैंकिंग व्यवहार से लिए गए हैं, भुगतान के नतीजों से नहीं। कोई भी ऋणदाता अपनी जाँच स्वयं करे।",
+
+    // singular forms, picked automatically when the count is 1
+    simEarlierOne: "{0} महीना पहले",
+    nMonths: "{0} महीने",
+    nMonthsOne: "{0} महीना",
+    goalStepNoDeadlineOne: "अभी आप जिस रफ़्तार से बचा रही हैं, इसमें लगभग {0} महीना लगेगा।",
+    affordPlanTextOne: "एक महीने {0} बचाएँ, फिर आप इसे आपात के पैसे को छुए बिना ख़रीद सकेंगी।"
   },
 
   ta: {
@@ -1319,7 +1333,14 @@ const strings = {
     passportSchemes: "அவர் தகுதி பெறும் திட்டங்கள்",
     passportNotUsed: "வேண்டுமென்றே பயன்படுத்தாதவை",
     passportLimitTitle: "இது என்ன, என்ன இல்லை",
-    passportLimit: "இது விண்ணப்பதாரரே பதிவு செய்த தகவலிலிருந்து தயாரிக்கப்பட்ட தயார்நிலைச் சுருக்கம். இது கடன் தகவல் நிறுவன அறிக்கை அல்ல, கடன் வழங்கும் முடிவும் அல்ல. எடைகள் வெளியிடப்பட்ட ஆய்வு மற்றும் வங்கி நடைமுறையிலிருந்து வந்தவை, திருப்பிச் செலுத்திய முடிவுகளிலிருந்து அல்ல. கடன் வழங்குபவர் தன் சொந்த சரிபார்ப்பைச் செய்ய வேண்டும்."
+    passportLimit: "இது விண்ணப்பதாரரே பதிவு செய்த தகவலிலிருந்து தயாரிக்கப்பட்ட தயார்நிலைச் சுருக்கம். இது கடன் தகவல் நிறுவன அறிக்கை அல்ல, கடன் வழங்கும் முடிவும் அல்ல. எடைகள் வெளியிடப்பட்ட ஆய்வு மற்றும் வங்கி நடைமுறையிலிருந்து வந்தவை, திருப்பிச் செலுத்திய முடிவுகளிலிருந்து அல்ல. கடன் வழங்குபவர் தன் சொந்த சரிபார்ப்பைச் செய்ய வேண்டும்.",
+
+    // singular forms, picked automatically when the count is 1
+    simEarlierOne: "{0} மாதம் முன்னதாக",
+    nMonths: "{0} மாதங்கள்",
+    nMonthsOne: "{0} மாதம்",
+    goalStepNoDeadlineOne: "இப்போது சேமிக்கும் வேகத்தில், இதற்கு சுமார் {0} மாதம் ஆகும்.",
+    affordPlanTextOne: "ஒரு மாதம் {0} சேமியுங்கள், அவசரகாலப் பணத்தைத் தொடாமல் இதை வாங்கலாம்."
   },
 
   te: {
@@ -1746,7 +1767,14 @@ const strings = {
     passportSchemes: "ఆమె అర్హత ఉన్న పథకాలు",
     passportNotUsed: "ఉద్దేశపూర్వకంగా వాడనివి",
     passportLimitTitle: "ఇది ఏమిటి, ఏమి కాదు",
-    passportLimit: "ఇది దరఖాస్తుదారు స్వయంగా నమోదు చేసిన రికార్డుల నుండి తయారైన సంసిద్ధత సారాంశం. ఇది క్రెడిట్ బ్యూరో నివేదిక కాదు, రుణ నిర్ణయం కూడా కాదు. బరువులు ప్రచురితమైన పరిశోధన మరియు బ్యాంకింగ్ ఆచరణ నుండి వచ్చాయి, తిరిగి చెల్లింపు ఫలితాల నుండి కాదు. రుణదాత తన సొంత తనిఖీలు చేసుకోవాలి."
+    passportLimit: "ఇది దరఖాస్తుదారు స్వయంగా నమోదు చేసిన రికార్డుల నుండి తయారైన సంసిద్ధత సారాంశం. ఇది క్రెడిట్ బ్యూరో నివేదిక కాదు, రుణ నిర్ణయం కూడా కాదు. బరువులు ప్రచురితమైన పరిశోధన మరియు బ్యాంకింగ్ ఆచరణ నుండి వచ్చాయి, తిరిగి చెల్లింపు ఫలితాల నుండి కాదు. రుణదాత తన సొంత తనిఖీలు చేసుకోవాలి.",
+
+    // singular forms, picked automatically when the count is 1
+    simEarlierOne: "{0} నెల ముందుగా",
+    nMonths: "{0} నెలలు",
+    nMonthsOne: "{0} నెల",
+    goalStepNoDeadlineOne: "ఇప్పుడు మీరు దాచుతున్న వేగంతో, దీనికి సుమారు {0} నెల పడుతుంది.",
+    affordPlanTextOne: "ఒక నెల {0} దాచండి, అత్యవసర డబ్బును తాకకుండా దీన్ని కొనగలరు."
   },
 
   ml: {
@@ -2173,7 +2201,14 @@ const strings = {
     passportSchemes: "അവർക്ക് യോഗ്യതയുള്ള പദ്ധതികൾ",
     passportNotUsed: "മനഃപൂർവം ഉപയോഗിക്കാത്തവ",
     passportLimitTitle: "ഇത് എന്താണ്, എന്തല്ല",
-    passportLimit: "ഇത് അപേക്ഷക സ്വയം രേഖപ്പെടുത്തിയ വിവരങ്ങളിൽ നിന്ന് തയ്യാറാക്കിയ സന്നദ്ധതാ സംഗ്രഹമാണ്. ഇത് ക്രെഡിറ്റ് ബ്യൂറോ റിപ്പോർട്ടല്ല, വായ്പാ തീരുമാനവുമല്ല. ഭാരങ്ങൾ പ്രസിദ്ധീകരിച്ച ഗവേഷണത്തിൽ നിന്നും ബാങ്കിംഗ് രീതിയിൽ നിന്നുമാണ്, തിരിച്ചടവ് ഫലങ്ങളിൽ നിന്നല്ല. വായ്പ നൽകുന്നവർ സ്വന്തം പരിശോധന നടത്തണം."
+    passportLimit: "ഇത് അപേക്ഷക സ്വയം രേഖപ്പെടുത്തിയ വിവരങ്ങളിൽ നിന്ന് തയ്യാറാക്കിയ സന്നദ്ധതാ സംഗ്രഹമാണ്. ഇത് ക്രെഡിറ്റ് ബ്യൂറോ റിപ്പോർട്ടല്ല, വായ്പാ തീരുമാനവുമല്ല. ഭാരങ്ങൾ പ്രസിദ്ധീകരിച്ച ഗവേഷണത്തിൽ നിന്നും ബാങ്കിംഗ് രീതിയിൽ നിന്നുമാണ്, തിരിച്ചടവ് ഫലങ്ങളിൽ നിന്നല്ല. വായ്പ നൽകുന്നവർ സ്വന്തം പരിശോധന നടത്തണം.",
+
+    // singular forms, picked automatically when the count is 1
+    simEarlierOne: "{0} മാസം നേരത്തെ",
+    nMonths: "{0} മാസങ്ങൾ",
+    nMonthsOne: "{0} മാസം",
+    goalStepNoDeadlineOne: "ഇപ്പോൾ സൂക്ഷിക്കുന്ന വേഗതയിൽ, ഇതിന് ഏകദേശം {0} മാസം എടുക്കും.",
+    affordPlanTextOne: "ഒരു മാസം {0} സൂക്ഷിക്കുക, അടിയന്തര പണം തൊടാതെ ഇത് വാങ്ങാം."
   }
 };
 
@@ -2185,6 +2220,14 @@ const strings = {
 // Word order differs between these languages, so building sentences by
 // concatenation would produce nonsense in at least one of them.
 export function translate(lang, key, params) {
+  // If the first value is 1 and a singular variant exists, use it. This keeps
+  // "1 month" from reading as "1 months" — which is wrong in every one of
+  // these languages, not only English.
+  if (params && params.length && Number(params[0]) === 1) {
+    const one = key + "One";
+    if (strings[lang]?.[one] ?? strings.en[one]) key = one;
+  }
+
   let out = strings[lang]?.[key] ?? strings.en[key] ?? key;
   if (params && params.length) {
     params.forEach((v, i) => {
