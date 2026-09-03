@@ -12,6 +12,8 @@ import Compare from "./pages/Compare.jsx";
 import Chat from "./pages/Chat.jsx";
 import Lessons from "./pages/Lessons.jsx";
 import Goals from "./pages/Goals.jsx";
+import Future from "./pages/Future.jsx";
+import Passport from "./pages/Passport.jsx";
 import Schemes from "./pages/Schemes.jsx";
 import Fairness from "./pages/Fairness.jsx";
 import Settings from "./pages/Settings.jsx";
@@ -44,6 +46,8 @@ export default function App() {
           <Route path="/compare" element={<Compare />} />
           <Route path="/chat" element={<Chat />} />
           <Route path="/goals" element={<Goals />} />
+          <Route path="/future" element={<Future />} />
+          <Route path="/passport" element={<Passport />} />
           <Route path="/lessons" element={<Lessons />} />
           <Route path="/schemes" element={<Schemes />} />
           <Route path="/fairness" element={<Fairness />} />

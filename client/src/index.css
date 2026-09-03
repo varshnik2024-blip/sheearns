@@ -486,3 +486,117 @@ table.data tr:last-child td { border-bottom: none; }
   padding-top: 12px;
   margin-top: auto;
 }
+
+/* ---------------- tabs ---------------- */
+
+.tabs { display: flex; gap: 6px; flex-wrap: wrap; background: var(--surface-2); padding: 5px; border-radius: 10px; }
+.tab {
+  font: inherit; font-weight: 700; font-size: 0.9rem;
+  border: 2px solid transparent; background: transparent; color: var(--muted);
+  padding: 10px 16px; min-height: 44px; border-radius: 8px; cursor: pointer;
+}
+.tab:hover { color: var(--ink); }
+.tab.on { background: var(--surface); color: var(--accent); border-color: var(--accent); }
+
+/* ---------------- simulator ---------------- */
+
+.sim-slider { display: flex; flex-direction: column; gap: 8px; }
+.sim-slider input[type="range"] {
+  width: 100%; height: 30px; accent-color: var(--accent); cursor: pointer; margin: 0;
+}
+.sim-slider input[type="range"]:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+
+.sim-result { background: linear-gradient(160deg, var(--accent-soft), var(--surface) 60%); }
+
+.sim-headline {
+  display: flex; flex-direction: column; gap: 6px; align-items: flex-start;
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: 10px; padding: 14px;
+}
+.sim-big { font-size: 1.9rem; font-weight: 700; line-height: 1; font-variant-numeric: tabular-nums; }
+
+.mini-stat {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 9px;
+  padding: 11px 13px; display: flex; flex-direction: column; gap: 3px;
+}
+.mini-value { font-size: 1.25rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.mini-delta { font-size: 0.78rem; font-weight: 700; }
+.mini-delta.up { color: var(--pos); }
+.mini-delta.down { color: var(--crit); }
+
+.sim-note {
+  background: var(--surface); border: 1px solid var(--accent);
+  border-radius: 9px; padding: 13px 15px; font-size: 0.9rem; line-height: 1.55;
+}
+
+/* ---------------- financing passport ---------------- */
+
+.passport {
+  background: var(--surface); border: 1px solid var(--line);
+  border-radius: 12px; padding: 30px;
+  display: flex; flex-direction: column; gap: 24px;
+}
+.passport-head {
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;
+  border-bottom: 3px solid var(--accent); padding-bottom: 16px; flex-wrap: wrap;
+}
+.passport-brand {
+  font-size: 0.72rem; font-weight: 700; letter-spacing: 0.16em;
+  text-transform: uppercase; color: var(--accent);
+}
+.passport-head h2 { font-size: 1.5rem; margin-top: 4px; }
+.passport-issued { font-size: 0.78rem; color: var(--muted); text-align: right; }
+
+.passport-who {
+  display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap;
+}
+.passport-name { font-size: 1.5rem; font-weight: 700; line-height: 1.2; }
+.passport-meta { color: var(--muted); font-size: 0.92rem; margin-top: 2px; }
+.passport-score {
+  text-align: center; background: var(--accent-soft); border: 2px solid var(--accent);
+  border-radius: 12px; padding: 14px 24px; flex: none;
+}
+.passport-score-num {
+  font-size: 2.6rem; font-weight: 700; line-height: 1; color: var(--accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.passport-h3 {
+  font-size: 0.74rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase;
+  color: var(--accent); border-bottom: 1px solid var(--line);
+  padding-bottom: 6px; margin-bottom: 12px;
+}
+.passport-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.passport-fact {
+  display: flex; flex-direction: column; gap: 3px;
+  border-left: 3px solid var(--accent-soft); padding-left: 10px;
+}
+.passport-fact b { font-size: 1.05rem; font-variant-numeric: tabular-nums; }
+.passport-table { font-size: 0.85rem; }
+.passport-list { margin: 0; padding-left: 1.2em; display: flex; flex-direction: column; gap: 6px; font-size: 0.92rem; }
+.passport-excluded p { font-size: 0.9rem; color: var(--muted); max-width: 70ch; }
+.passport-foot {
+  border-top: 1px solid var(--line); padding-top: 14px;
+  font-size: 0.82rem; color: var(--muted);
+}
+.passport-foot b { color: var(--ink); display: block; margin-bottom: 3px; }
+
+@media (max-width: 760px) {
+  .passport { padding: 18px; }
+  .passport-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Printing: the passport is the only thing that should reach the paper. */
+@media print {
+  .sidebar, .topbar, .no-print, .quote-card, .toast { display: none !important; }
+  .app, .main, .content { display: block; padding: 0; margin: 0; max-width: none; }
+  body { background: #fff; }
+  .passport {
+    border: none; border-radius: 0; padding: 0;
+    box-shadow: none; page-break-inside: avoid;
+  }
+  .passport-score { border-color: #000; }
+  .passport-h3, .passport-brand, .passport-score-num { color: #000; }
+  .passport-head { border-bottom-color: #000; }
+  @page { margin: 14mm; }
+}
