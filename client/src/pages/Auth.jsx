@@ -1,11 +1,20 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useApp } from "../context/AppContext.jsx";
 import { LANGUAGES } from "../i18n.js";
 import { Field } from "../components/ui.jsx";
+import { api } from "../lib/api.js";
+import Quote from "../components/Quote.jsx";
 
 export default function Auth() {
   const { t, login, signup, lang, setSetting } = useApp();
   const [mode, setMode] = useState("signup");
+  const [demos, setDemos] = useState([]);
+
+  // The sample accounts to offer. If the server cannot be reached we simply
+  // do not show them, rather than showing buttons that will fail.
+  useEffect(() => {
+    api.demos().then((d) => setDemos(d.demos || [])).catch(() => setDemos([]));
+  }, []);
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [pin, setPin] = useState("");
@@ -130,6 +139,48 @@ export default function Auth() {
             {isSignup ? t("haveAccount") : t("noAccount")}
           </button>
         </form>
+
+        {/* Sample accounts. Each is a real, separate login, so trying one
+            never touches anybody's own data. */}
+        {demos.length > 0 && (
+          <div className="card" style={{ gap: 12 }}>
+            <div>
+              <span className="card-title">👀 {t("demoTitle")}</span>
+              <p className="card-hint" style={{ marginTop: 3 }}>{t("demoSub")}</p>
+            </div>
+
+            {demos.map((d) => (
+              <button
+                key={d.phone}
+                type="button"
+                className="choice"
+                disabled={busy}
+                onClick={async () => {
+                  setError("");
+                  setBusy(true);
+                  try {
+                    await login(d.phone, d.pin);
+                  } catch (err) {
+                    setError(err.message);
+                  } finally {
+                    setBusy(false);
+                  }
+                }}
+              >
+                <span className="ic" aria-hidden="true">👤</span>
+                <span>
+                  <b>{d.name}</b>
+                  <br />
+                  <span style={{ color: "var(--muted)", fontSize: "0.85rem" }}>{d.label}</span>
+                </span>
+              </button>
+            ))}
+
+            <p className="card-hint">{t("demoNote")}</p>
+          </div>
+        )}
+
+        <Quote compact />
       </div>
     </div>
   );

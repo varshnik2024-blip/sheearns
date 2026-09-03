@@ -34,6 +34,7 @@ router.put("/", (req, res) => {
     supplierPayments: Array.isArray(body.supplierPayments)
       ? body.supplierPayments
       : existing.supplierPayments,
+    goals: Array.isArray(body.goals) ? body.goals : existing.goals || [],
     lessons: { ...existing.lessons, ...(body.lessons || {}) },
     settings: { ...existing.settings, ...(body.settings || {}) }
   };

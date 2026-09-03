@@ -5,23 +5,27 @@
    --------------------------------------------------------------- */
 
 :root {
-  --bg: #f4f6f5;
+  /* Rose and plum. The accent is a deep magenta-rose that still passes
+     contrast checks on white for normal body text, so the app can look
+     warm and feminine without becoming hard to read. */
+  --bg: #fdf7f9;
   --surface: #ffffff;
-  --surface-2: #edf1ef;
-  --line: #d5dedb;
-  --ink: #101715;
-  --muted: #5c6a67;
-  --accent: #0e6b5c;
-  --accent-soft: #d6e8e3;
-  --brass: #a4741b;
-  --brass-soft: #f5ead4;
+  --surface-2: #fbeef3;
+  --line: #f0d5e0;
+  --ink: #2b1522;
+  --muted: #7d5c6c;
+  --accent: #a81f63;
+  --accent-soft: #fbe3ee;
+  --accent-deep: #7a1247;
+  --brass: #b06a2c;
+  --brass-soft: #fbeada;
   --pos: #1a7a4a;
   --pos-soft: #dcefe3;
-  --warn: #b0700f;
-  --warn-soft: #f9ecd6;
+  --warn: #a76207;
+  --warn-soft: #fbeeda;
   --crit: #b0332c;
-  --crit-soft: #f7dedb;
-  --shadow: 0 1px 2px rgba(16, 23, 21, 0.05), 0 8px 24px -14px rgba(16, 23, 21, 0.2);
+  --crit-soft: #f9dedc;
+  --shadow: 0 1px 2px rgba(43, 21, 34, 0.05), 0 8px 24px -14px rgba(43, 21, 34, 0.22);
   --radius: 10px;
   --base: 16px;
 }
@@ -39,8 +43,9 @@
   --line: #000000;
   --ink: #000000;
   --muted: #262626;
-  --accent: #00473d;
-  --accent-soft: #cfe8e3;
+  --accent: #6b0d3d;
+  --accent-soft: #fbe3ee;
+  --accent-deep: #4d0a2c;
   --pos: #005c2f;
   --crit: #8c1008;
   --warn: #6b4200;
@@ -326,8 +331,19 @@ table.data tr:last-child td { border-bottom: none; }
 }
 .modal h2 { font-size: 1.2rem; }
 
-/* Auth screen */
-.auth-page { min-height: 100vh; display: grid; place-items: center; padding: 20px; background: var(--bg); }
+/* Auth screen.
+   "safe center" keeps the box centred on tall screens but stops it being
+   clipped off the top when the content is taller than the viewport — which
+   happens once the sample accounts and the quote are on the page. */
+/* Deliberately NOT vertically centred. Centring a box that is taller than
+   the screen pushes its top out of reach, and this page grew once the sample
+   accounts and the quote were added. Top-aligned always scrolls correctly. */
+.auth-page {
+  min-height: 100vh;
+  padding: 32px 20px;
+  background: var(--bg);
+}
+.auth-box { margin: 0 auto; }
 .auth-box { width: 100%; max-width: 420px; display: flex; flex-direction: column; gap: 18px; }
 
 /* Toast */
@@ -375,4 +391,98 @@ table.data tr:last-child td { border-bottom: none; }
   .g2, .g4 { grid-template-columns: 1fr; }
   .factor { grid-template-columns: 1fr 80px 54px; }
   .msg { max-width: 95%; }
+}
+
+/* ---------------- quotes ---------------- */
+
+.quote-card {
+  margin: 0;
+  background: linear-gradient(135deg, var(--accent-soft), var(--surface));
+  border: 1px solid var(--line);
+  border-left: 4px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.quote-card blockquote {
+  margin: 0;
+  font-size: 1.05rem;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--ink);
+  max-width: 60ch;
+}
+.quote-card figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+.quote-actions { display: flex; gap: 6px; }
+
+.quote-compact {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: var(--muted);
+  text-align: center;
+  max-width: 46ch;
+  margin: 0 auto;
+}
+.quote-compact cite { font-style: normal; font-weight: 700; }
+
+/* ---------------- goals ---------------- */
+
+.goal-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; }
+
+.goal-card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.goal-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.goal-date { font-size: 0.8rem; color: var(--muted); white-space: nowrap; }
+.goal-title { font-size: 1.05rem; font-weight: 700; line-height: 1.3; }
+.goal-amounts { font-size: 1.15rem; font-weight: 700; }
+.goal-amounts .of { color: var(--muted); font-weight: 400; font-size: 0.95rem; }
+
+.goal-bar-row { display: flex; justify-content: space-between; font-size: 0.82rem; color: var(--muted); }
+.goal-bar { height: 9px; border-radius: 99px; background: var(--surface-2); border: 1px solid var(--line); overflow: hidden; }
+.goal-bar i { display: block; height: 100%; border-radius: 99px; background: var(--pos); }
+.goal-bar i.attention { background: var(--warn); }
+.goal-bar i.overdue { background: var(--crit); }
+
+.goal-step {
+  background: var(--accent-soft);
+  border-radius: 9px;
+  padding: 12px 14px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+.goal-step .step-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 5px;
+}
+.goal-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+  margin-top: auto;
 }

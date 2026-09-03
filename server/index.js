@@ -8,6 +8,7 @@ import { fileURLToPath } from "url";
 import authRoutes from "./routes/auth.js";
 import dataRoutes from "./routes/data.js";
 import chatRoutes from "./routes/chat.js";
+import { seedDemoAccounts } from "./demo.js";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const app = express();
@@ -52,6 +53,11 @@ app.use((err, req, res, next) => {
   console.error(err);
   res.status(500).json({ error: "Something went wrong on the server." });
 });
+
+// Demo accounts are rebuilt at every start, so their dates never go stale.
+seedDemoAccounts()
+  .then(({ total }) => console.log(`  Demo accounts ready: ${total}`))
+  .catch((err) => console.error("  Could not seed demo accounts:", err.message));
 
 app.listen(PORT, () => {
   console.log(`\n  SheEarns server running on http://localhost:${PORT}`);

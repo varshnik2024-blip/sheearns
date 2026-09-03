@@ -6,6 +6,7 @@ import { useApp } from "../context/AppContext.jsx";
 import { Amount, ChoiceGrid, Field, Modal, Stat, Empty, SpeakButton } from "../components/ui.jsx";
 import { EXPENSE_CATEGORIES, INCOME_SOURCES, ASSET_TYPES, localise, labelOf } from "../data/schemes.js";
 import { byMonth, sum, thisMonth, todayISO, rupees } from "../lib/format.js";
+import Quote from "../components/Quote.jsx";
 
 export default function MoneyMap() {
   const { t, lang, record, addEntry, removeEntry } = useApp();
@@ -88,6 +89,8 @@ export default function MoneyMap() {
       </div>
 
       {/* The four add buttons are the main thing on this page. */}
+      <Quote />
+
       <div className="grid g4">
         <button className="btn" onClick={() => setForm("income")}>➕ {t("addIncome")}</button>
         <button className="btn ghost" onClick={() => setForm("expense")}>➖ {t("addExpense")}</button>

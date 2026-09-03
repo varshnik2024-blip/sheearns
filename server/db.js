@@ -55,6 +55,7 @@ export function blankRecord() {
     expenses: [],
     assets: [],
     supplierPayments: [],
+    goals: [],
     lessons: { completed: [], quizScore: null, quizAnswers: {} },
     settings: { language: "en", fontSize: "md", contrast: "normal", discreet: false }
   };

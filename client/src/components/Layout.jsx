@@ -8,6 +8,7 @@ const NAV = [
   { to: "/score", key: "navScore", icon: "📊" },
   { to: "/path", key: "navPath", icon: "🪜" },
   { to: "/compare", key: "navCompare", icon: "⚖️" },
+  { to: "/goals", key: "navGoals", icon: "🎯" },
   { to: "/chat", key: "navChat", icon: "💬" },
   { to: "/lessons", key: "navLessons", icon: "📖" },
   { to: "/schemes", key: "navSchemes", icon: "🏛️" },

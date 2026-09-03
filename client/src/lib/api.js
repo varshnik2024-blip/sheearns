@@ -39,6 +39,7 @@ export const api = {
   signup: (payload) => request("/auth/signup", { method: "POST", body: JSON.stringify(payload) }),
   login: (payload) => request("/auth/login", { method: "POST", body: JSON.stringify(payload) }),
   me: () => request("/auth/me"),
+  demos: () => request("/auth/demo"),
   getData: () => request("/data"),
   saveData: (record) => request("/data", { method: "PUT", body: JSON.stringify(record) }),
   deleteData: () => request("/data", { method: "DELETE" }),

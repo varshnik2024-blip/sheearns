@@ -3,8 +3,12 @@ import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import rateLimit from "express-rate-limit";
 import { readDB, writeDB, blankRecord } from "../db.js";
+import { demoList } from "../demo.js";
 
 const router = express.Router();
+
+// GET /api/auth/demo — the sample accounts offered on the login screen.
+router.get("/demo", (req, res) => res.json({ demos: demoList() }));
 
 const JWT_SECRET = process.env.JWT_SECRET || "dev-only-secret-change-me";
 const TOKEN_LIFE = "7d";
